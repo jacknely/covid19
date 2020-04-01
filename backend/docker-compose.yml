@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    build: .
+    ports:
+      - "5001:80"
+    volumes:
+      - /Users/jacknely/Apps/covid19/backend:/opt
+    environment:
+      - MONGODB_HOST=db
+      - FLASK_APP=run.py
+      - FLASK_ENV=development
+    links:
+      - db
+
+  db:
+    image: mongo:3.4
+    command: mongod
