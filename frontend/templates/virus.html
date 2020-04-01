@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Home Page Test{% endblock %}
+
+{% block content %}
+<p>This is a test</p>
+
+    <ul>
+    {% for item in countries %}
+        <li>{{ item | title }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
