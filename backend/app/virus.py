@@ -109,6 +109,6 @@ class Covid19:
                 (eg deaths)
         """
         for category in categories:
-            url = db.map_url(category)
+            url = self.map_url(category)
             virus_by_country_data = self.import_data(url)
             self.save_data_to_db(virus_by_country_data, category)
